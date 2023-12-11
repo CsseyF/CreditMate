@@ -74,6 +74,8 @@ namespace CreditMate.Application.Services
                 parcelas.Add(newParcela);
             }
 
+            financiamento.UltimoVencimento = parcelas.Last().DataVencimento.Value;
+
             await _financiamentoService.InsertAsync(financiamento, cancellationToken);
             await _parcelaService.InsertRangeAsync(parcelas, cancellationToken);
 

@@ -4,6 +4,7 @@ using CreditMate.Persistence.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CreditMate.Persistence.Migrations
 {
     [DbContext(typeof(CreditMateContext))]
-    partial class CreditMateContextModelSnapshot : ModelSnapshot
+    [Migration("20231211232727_NovoUsuarioMigration")]
+    partial class NovoUsuarioMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,44 +72,44 @@ namespace CreditMate.Persistence.Migrations
                             Id = new Guid("a1f2565e-d7e6-4170-9b35-7d1228ea55f1"),
                             Celular = "(11)951136376",
                             Cpf = "38586555894",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7590),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(2952),
                             IsActive = true,
                             Nome = "Casey Adesola Fernandes",
                             Uf = "SP",
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7607)
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(2967)
                         },
                         new
                         {
                             Id = new Guid("a26635ef-b924-4a97-873e-26c2801d323a"),
                             Celular = "(27)989000360",
                             Cpf = "53119013064",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7638),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3005),
                             IsActive = true,
                             Nome = "Lucas Amorim",
                             Uf = "SP",
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7639)
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3006)
                         },
                         new
                         {
                             Id = new Guid("f35c557b-6f1a-494d-9425-69fc3f4ed9a7"),
                             Celular = "(45)996176307",
                             Cpf = "53546002512",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7656),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3023),
                             IsActive = true,
                             Nome = "Douglas Eduardo",
                             Uf = "SP",
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7656)
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3024)
                         },
                         new
                         {
                             Id = new Guid("f312357b-6f1a-494d-9425-6cbc3f4ad9a7"),
                             Celular = "(21)987646298",
                             Cpf = "27310180038",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7673),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3062),
                             IsActive = true,
                             Nome = "Guilherme Barros",
                             Uf = "RJ",
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7673)
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3063)
                         });
                 });
 
@@ -158,33 +161,33 @@ namespace CreditMate.Persistence.Migrations
                         {
                             Id = new Guid("f35c557b-6f1a-494d-9425-69fc3f4ed9a7"),
                             Cpf = "38586555894",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7702),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3096),
                             IsActive = true,
                             TipoFinanciamento = 0,
-                            UltimoVencimento = new DateTime(2024, 6, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7691),
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7702),
+                            UltimoVencimento = new DateTime(2024, 6, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3082),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3097),
                             ValorTotal = 50000m
                         },
                         new
                         {
                             Id = new Guid("abc3a4f6-ea22-4523-9915-f13a5f5e6253"),
                             Cpf = "53119013064",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7722),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3119),
                             IsActive = true,
                             TipoFinanciamento = 1,
-                            UltimoVencimento = new DateTime(2025, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7721),
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7723),
+                            UltimoVencimento = new DateTime(2025, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3117),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3119),
                             ValorTotal = 800000m
                         },
                         new
                         {
                             Id = new Guid("aa77cc25-111c-4011-9d27-bd630a32753f"),
                             Cpf = "53546002512",
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7739),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3136),
                             IsActive = true,
                             TipoFinanciamento = 3,
-                            UltimoVencimento = new DateTime(2024, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7737),
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7739),
+                            UltimoVencimento = new DateTime(2024, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3134),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3136),
                             ValorTotal = 200000m
                         });
                 });
@@ -200,7 +203,7 @@ namespace CreditMate.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<DateTime?>("DataPagamento")
+                    b.Property<DateTime>("DataPagamento")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DataVencimento")
@@ -238,37 +241,40 @@ namespace CreditMate.Persistence.Migrations
                         new
                         {
                             Id = new Guid("cbfc78b8-8651-4c3a-b1f3-495d35372526"),
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7769),
-                            DataVencimento = new DateTime(2023, 12, 31, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7757),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3171),
+                            DataPagamento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataVencimento = new DateTime(2023, 12, 31, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3153),
                             FinanciamentoId = new Guid("f35c557b-6f1a-494d-9425-69fc3f4ed9a7"),
                             FoiPago = false,
                             IsActive = true,
                             NumeroParcela = 1,
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7769),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3171),
                             Valor = 8333m
                         },
                         new
                         {
                             Id = new Guid("f96444c8-e822-43eb-ae1d-6531c2374ae2"),
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7788),
-                            DataVencimento = new DateTime(2023, 12, 31, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7786),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3192),
+                            DataPagamento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataVencimento = new DateTime(2023, 12, 31, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3190),
                             FinanciamentoId = new Guid("abc3a4f6-ea22-4523-9915-f13a5f5e6253"),
                             FoiPago = false,
                             IsActive = true,
                             NumeroParcela = 1,
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7788),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3193),
                             Valor = 3333m
                         },
                         new
                         {
                             Id = new Guid("7eb2d084-8fad-4078-856b-8f60658d860e"),
-                            CreatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7806),
-                            DataVencimento = new DateTime(2023, 12, 31, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7804),
+                            CreatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3209),
+                            DataPagamento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataVencimento = new DateTime(2023, 12, 31, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3207),
                             FinanciamentoId = new Guid("aa77cc25-111c-4011-9d27-bd630a32753f"),
                             FoiPago = false,
                             IsActive = true,
                             NumeroParcela = 1,
-                            UpdatedAt = new DateTime(2023, 12, 11, 20, 40, 15, 673, DateTimeKind.Local).AddTicks(7806),
+                            UpdatedAt = new DateTime(2023, 12, 11, 20, 27, 27, 125, DateTimeKind.Local).AddTicks(3209),
                             Valor = 1666m
                         });
                 });

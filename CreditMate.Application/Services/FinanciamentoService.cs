@@ -20,7 +20,6 @@ namespace CreditMate.Application.Services
         public async Task<Financiamento>? FindOneAsync(Guid id,
             CancellationToken cancellationToken)
         {
-            // escrever adição das parcelas no retorno depois
             var entity = await _financiamentoRepository.FindOneAsync(id, cancellationToken);
 
             if(entity == null)
