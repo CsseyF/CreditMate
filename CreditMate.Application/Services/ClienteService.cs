@@ -43,6 +43,14 @@ namespace CreditMate.Application.Services
 
             };
 
+            var existentEntity = _clienteRepository
+                .FindByCpfAsync(clienteDto.Cpf, cancellationToken);
+
+            if(existentEntity != null)
+            {
+                throw new AlreadyExistentException("Cpf");
+            }
+
             var result = await _clienteRepository.InsertAsync(entity, cancellationToken);
             return result;
         }

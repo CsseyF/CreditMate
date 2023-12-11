@@ -2,11 +2,6 @@
 using CreditMate.Core.Entities;
 using CreditMate.Persistence.Database;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreditMate.Application.Repositories
 {
@@ -28,6 +23,13 @@ namespace CreditMate.Application.Repositories
         public async Task<IEnumerable<Cliente>> FindAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Cliente.ToListAsync(cancellationToken);
+        }
+
+        public async Task<Cliente> FindByCpfAsync(string cpf, CancellationToken cancellationToken)
+        {
+            return await _context.Cliente
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(record => record.Cpf == cpf, cancellationToken);
         }
         public async Task<Cliente> InsertAsync(Cliente cliente,
             CancellationToken cancellationToken)

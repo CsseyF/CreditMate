@@ -18,18 +18,60 @@ namespace CreditMate.Persistence.Database
             modelBuilder.Entity<Cliente>()
                 .HasQueryFilter(x => x.IsActive);
 
-            modelBuilder.Entity<BaseEntity>()
+            modelBuilder.Entity<Cliente>()
+                .HasMany(x => x.Financiamentos);
+
+            modelBuilder.Entity<Cliente>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<BaseEntity>()
+            modelBuilder.Entity<Cliente>()
                 .Property(x => x.CreatedAt)
                 .HasDefaultValueSql("getdate()");
 
-            modelBuilder.Entity<BaseEntity>()
+            modelBuilder.Entity<Cliente>()
                 .Property(x => x.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
 
-            modelBuilder.Entity<BaseEntity>()
+            modelBuilder.Entity<Cliente>()
+                .Property(x => x.IsActive)
+                .HasDefaultValue(true);
+
+            modelBuilder.Entity<Financiamento>()
+                .HasQueryFilter(x => x.IsActive);
+
+            modelBuilder.Entity<Financiamento>()
+             .HasMany(x => x.Parcelas);
+
+            modelBuilder.Entity<Financiamento>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Financiamento>()
+                .Property(x => x.CreatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<Financiamento>()
+                .Property(x => x.UpdatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<Financiamento>()
+                .Property(x => x.IsActive)
+                .HasDefaultValue(true);
+
+            modelBuilder.Entity<Parcela>()
+                .HasQueryFilter(x => x.IsActive);
+
+            modelBuilder.Entity<Parcela>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Parcela>()
+                .Property(x => x.CreatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<Parcela>()
+                .Property(x => x.UpdatedAt)
+                .HasDefaultValueSql("getdate()");
+
+            modelBuilder.Entity<Parcela>()
                 .Property(x => x.IsActive)
                 .HasDefaultValue(true);
 

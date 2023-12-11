@@ -1,7 +1,4 @@
-﻿using CreditMate.Core.Entities;
-using CreditMate.Core.Enums;
-
-namespace CreditMate.Application.Dtos.FinanciamentoDtos
+﻿namespace CreditMate.Application.Dtos.FinanciamentoDtos
 {
     public class UpdateFinanciamentoRequestDto
     {

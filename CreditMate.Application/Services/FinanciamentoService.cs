@@ -1,24 +1,21 @@
 ﻿using CreditMate.Application.Dtos.FinanciamentoDtos;
-using CreditMate.Application.Repositories;
 using CreditMate.Application.Repositories.Interfaces;
 using CreditMate.Application.Services.Interfaces;
 using CreditMate.Core.Entities;
 using CreditMate.Core.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreditMate.Application.Services
 {
     public class FinanciamentoService : IFinanciamentoService
     {
         private readonly IFinanciamentoRepository _financiamentoRepository;
+        private readonly IParcelaService _parcelaService;
 
-        public FinanciamentoService(IFinanciamentoRepository financiamentoRepository)
+        public FinanciamentoService(IFinanciamentoRepository financiamentoRepository, IParcelaService parcelaService)
         {
             _financiamentoRepository = financiamentoRepository;
+            _parcelaService = parcelaService;
+
         }
         public async Task<Financiamento>? FindOneAsync(Guid id,
             CancellationToken cancellationToken)
@@ -30,6 +27,8 @@ namespace CreditMate.Application.Services
             {
                 throw new EntityNotFoundException();
             }
+            var parcelas = await _parcelaService.FindAllByFinanciamentoAsync(entity.Id, cancellationToken);
+            entity.Parcelas = parcelas;
 
             return entity;
         }
@@ -52,11 +51,11 @@ namespace CreditMate.Application.Services
 
             var entity = new Financiamento()
             {
+                Id = financiamentoDto.Id,
                 Cpf = financiamentoDto.Cpf,
                 TipoFinanciamento = financiamentoDto.TipoFinanciamento,
                 UltimoVencimento = financiamentoDto.UltimoVencimento,
                 ValorTotal = financiamentoDto.ValorTotal,
-                Parcelas = financiamentoDto.Parcelas,
             };
 
             var result = await _financiamentoRepository.InsertAsync(entity, cancellationToken);
@@ -72,6 +71,7 @@ namespace CreditMate.Application.Services
                 throw new EntityNotFoundException(nameof(Cliente));
             }
             oldEntity.Cpf = financiamentoDto?.Cpf;
+            oldEntity.UpdatedAt = DateTime.Now;
 
             return await _financiamentoRepository.UpdateAsync(oldEntity, cancellationToken);
         }

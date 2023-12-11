@@ -5,7 +5,7 @@
         public Guid FinanciamentoId { get; set; }
         public int NumeroParcela { get; set; }
         public decimal Valor { get; set; }
-        public DateTime ValorVencimento { get; set; }
+        public DateTime? DataVencimento { get; set; }
         public DateTime DataPagamento { get; set; }
     }
 }

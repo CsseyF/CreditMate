@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CreditMate.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e7a74929e33174fb0ac5ad5fd748e928af2c32")]
 [assembly: System.Reflection.AssemblyProductAttribute("CreditMate.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CreditMate.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

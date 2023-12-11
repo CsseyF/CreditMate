@@ -8,6 +8,6 @@ namespace CreditMate.Core.Entities
         public decimal ValorTotal { get; set; }
         public DateTime UltimoVencimento { get; set; }
         public TipoFinanciamentoEnum TipoFinanciamento { get; set; }
-        public required IEnumerable<Parcela> Parcelas { get; set; }
+        public IEnumerable<Parcela>? Parcelas { get; set; }
     }
 }

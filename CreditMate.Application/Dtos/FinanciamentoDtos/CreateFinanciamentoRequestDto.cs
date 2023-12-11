@@ -10,10 +10,10 @@ namespace CreditMate.Application.Dtos.FinanciamentoDtos
 {
     public class CreateFinanciamentoRequestDto
     {
+        public Guid Id { get; set; }
         public required string Cpf { get; set; }
         public decimal ValorTotal { get; set; }
         public DateTime UltimoVencimento { get; set; }
         public TipoFinanciamentoEnum TipoFinanciamento { get; set; }
-        public required IEnumerable<Parcela> Parcelas { get; set; }
     }
 }
